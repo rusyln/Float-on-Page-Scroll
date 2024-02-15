@@ -1,0 +1,5 @@
+name: Float on Page Scrool
+type: module
+description: Floating Video on Page Scroll
+package: Rus Projects
+core_version_requirement: ^9 || ^10

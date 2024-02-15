@@ -1,0 +1,4 @@
+administer float_on_page_scroll configuration:
+  title: 'Administer float_on_page_scroll configuration'
+  description: 'Optional description.'
+  restrict access: true

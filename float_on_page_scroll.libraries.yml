@@ -1,0 +1,9 @@
+# Custom module library for general purposes.
+float_on_page_scroll:
+  js:
+    js/float_on_page_scroll.js: {}
+  css:
+    component:
+      css/float_on_page_scroll.css: {}
+  dependencies:
+    - core/jquery
