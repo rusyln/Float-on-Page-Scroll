@@ -73,4 +73,15 @@ class FloatBlock extends BlockBase {
     return $build;
   }
 
+   /**
+   * Generate a unique ID for the block.
+   *
+   * @return string
+   *   A unique identifier.
+   */
+  private function getUniqueId() {
+    // Use the block plugin ID and a timestamp to generate a unique ID.
+    return $this->getPluginId() . '-' . time();
+  }
+
 }
