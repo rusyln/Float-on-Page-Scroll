@@ -66,11 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-
-
     /*Getting Video Tag List and Creating instances*/
-
-
 
     videoList = document.getElementsByTagName("video");
 
@@ -96,8 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-
-
     closeButton = document.querySelector("a.close-button");
 
     gradientOverlay = document.querySelector(".gradient-overlay");
@@ -105,8 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
     fullScreenIcon = document.querySelector("i.fa.fa-arrows-alt");
 
     fullScreenPlay();
-
-
 
 });
 
@@ -450,53 +442,32 @@ function videohandler() {
 
 
 window.addEventListener('scroll', function () {
-
-
-
-    inViewPortBol = inViewPort();
-
-    if (currentPlayer) {
-
+    for (var i = 0; i < ytVideoId.length; i++) {
+        var currentPlayer = ytVideoId[i];
+        if (!currentPlayer) continue;
+        
+        inViewPortBol = inViewPort(currentPlayer);
+        
         if (!inViewPortBol && currentPlayer.classList.contains("is-playing")) {
-
-            for (i = 0; i < ytVideoId.length; i++) {
-
-                if (currentPlayer != ytVideoId[i]) {
-
-                    ytVideoId[i].classList.remove("is-sticky");
-
+            for (var j = 0; j < ytVideoId.length; j++) {
+                if (currentPlayer != ytVideoId[j]) {
+                    ytVideoId[j].classList.remove("is-sticky");
                 }
-
             }
-
-            for (i = 0; i < videoTagId.length; i++) {
-
-                if (currentPlayer != videoTagId[i]) {
-
-                    videoTagId[i].classList.remove("is-sticky");
-
+            for (var k = 0; k < videoTagId.length; k++) {
+                if (currentPlayer != videoTagId[k]) {
+                    videoTagId[k].classList.remove("is-sticky");
                 }
-
             }
-
             currentPlayer.classList.add("is-sticky");
-
             openFloatVideo();
-
         } else {
-
             if (currentPlayer.classList.contains("is-sticky")) {
-
                 currentPlayer.classList.remove("is-sticky");
-
                 closeFloatVideo();
-
             }
-
         }
-
     }
-
 });
 
 
