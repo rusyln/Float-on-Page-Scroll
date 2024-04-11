@@ -1,7 +1,8 @@
 <?php
 
 namespace Drupal\float_on_page_scroll\Plugin\Block;
-
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Component\Render\FormattableMarkup;
@@ -48,6 +49,14 @@ class FloatBlock extends BlockBase {
     $this->configuration['width'] = $form_state->getValue('width');
     $this->configuration['height'] = $form_state->getValue('height');
   }
+
+     /**
+ * {@inheritdoc}
+ */
+protected function blockAccess(AccountInterface $account) {
+  // Allow access to everyone.
+  return AccessResult::allowed();
+}
 
   /**
    * {@inheritdoc}
