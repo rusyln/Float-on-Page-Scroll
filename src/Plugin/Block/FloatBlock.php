@@ -73,7 +73,7 @@ protected function blockAccess(AccountInterface $account) {
     <a href="javascript:void(0);" class="close-button"></a>
     <div class="gradient-overlay"></div>
     <i class="fa fa-arrows-alt" aria-hidden="true"></i>
-    <iframe class="featured-video" width="560" height="315" src="' . $src . '?enablejsapi=1&amp;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe class="featured-video" width="560" height="315" src="' . $src . '?enablejsapi=1&amp;rel=0&amp;controls=0&amp;showinfo=0;&autoplay=1&mute=1" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section>';
 
     // Wrap the iframe content in a FormattableMarkup object.
