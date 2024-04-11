@@ -261,6 +261,12 @@ function onPlayerStateChange(event) {
 
             ytVideoId[i].classList.add("is-playing");
 
+            // If autoplayed, make the video float
+            if (event.data === YT.PlayerState.PLAYING && event.target.getPlayerState() === YT.PlayerState.BUFFERING) {
+                currentPlayer.classList.add("is-sticky");
+                openFloatVideo();
+            }
+
             break;
 
         }
